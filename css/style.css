@@ -1,1 +1,39 @@
-/*# sourceMappingURL=style.css.map */
+/*Variables*/
+/*Selector elemento*/
+body {
+  background: #D0DCE9;
+  width: 100%;
+  height: 100vr;
+  font-family: Sahitya !important;
+  font-size: 1.5em !important;
+}
+
+/*Selector clase (Total de selectores = 1)*/
+.menu {
+  margin: 1% 5%;
+  display: flex;
+  gap: 4%;
+  align-items: center;
+  justify-content: right;
+}
+
+#resaltado {
+  padding-bottom: 0 !important;
+  border-bottom: solid #F0A800 8px !important;
+}
+
+/*Selector descendente(1)*/
+nav a {
+  font-weight: bold !important;
+  color: #004E7A !important;
+}
+
+@media (max-width: 750px) {
+  .menu {
+    justify-content: center;
+  }
+  nav a {
+    font-size: 0.8em !important;
+    margin-bottom: 2%;
+  }
+}/*# sourceMappingURL=style.css.map */
