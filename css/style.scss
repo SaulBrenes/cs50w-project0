@@ -1,22 +1,23 @@
 /*Variables*/
 $fondo: #D0DCE9;
+$primario: #004E7A;
 $secundario: #F0A800;
-$color_letra: #004E7A;
+$secundario_var: #f0a800c2;
+$terciario: #FFFFFF;
 
 /*Selector elemento*/
 body {
   background: $fondo;
+  margin-bottom: 2%;
   width: 100%;
-  height: 100vr;
   font-family: Sahitya !important;
-  font-size: 1.5em !important;
+  font-size: 1.75em !important;
 }
 
 /*Selector clase (Total de selectores = 1)*/
 .menu {
   margin: 1% 5%;
   display: flex;
-  gap: 4%;
   align-items: center;
   justify-content: right;
 }
@@ -29,11 +30,108 @@ body {
 /*Selector descendente(1)*/
 nav a {
   font-weight: bold !important;
-  color: $color_letra !important;
+  color: $primario !important;
 }
 
-@media (max-width: 750px) {
-  .menu{
+.contenedor {
+  margin: 1% 5% !important;
+  display: flex;
+  justify-content: space-between;
+}
+
+.perfil {
+  width: 30%;
+  padding: 1.5% 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: $primario;
+  border-radius: 10px;
+
+}
+
+.perfil b,
+.perfil p {
+  display: flex;
+  width: 100%;
+  justify-content: left;
+  color: $terciario;
+  font-size: 0.9em;
+}
+
+.foto {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.texto {
+  width: 65%;
+  padding-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  color: $primario;
+  font-weight: bold;
+
+  h1{
+    font-size: 55px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .button{
+    text-decoration: none;
+    color: $primario;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    background: $secundario;
+    padding: 1% 2%;
+  }
+
+  .button:hover{
+    background: $secundario_var;
+    padding: 1.3% 2.3%;
+  }
+
+  p{
+    text-align: center;
+  }
+
+}
+
+.redes {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.red {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.red {
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: $primario !important;
+    a{
+      text-decoration: none;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .menu {
     justify-content: center;
   }
 
@@ -42,5 +140,26 @@ nav a {
       font-size: 0.8em !important;
       margin-bottom: 2%;
     }
+  }
+
+  .perfil{
+    display: none;
+  }
+
+  .texto{
+    width: 100%;
+    h1{
+      font-size: 45px;
+    }
+
+    p{
+      font-size: 25px;
+      text-align: justify;
+    }
+  }
+
+  .redes{
+    flex-direction: column;
+    gap: 20px;
   }
 }
