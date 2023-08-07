@@ -69,6 +69,10 @@ nav a {
   color: #004E7A;
   font-weight: bold;
 }
+.texto .foto-responsive {
+  width: 50%;
+  display: none;
+}
 .texto h1 {
   font-size: 55px;
   text-align: center;
@@ -128,6 +132,9 @@ nav a {
   }
   .texto {
     width: 100%;
+  }
+  .texto .foto-responsive {
+    display: block;
   }
   .texto h1 {
     font-size: 45px;
