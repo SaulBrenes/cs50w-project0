@@ -148,12 +148,35 @@ nav a {
   font-size: 22px;
 }
 .experiencia .lista small {
+  margin-top: 20px !important;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: smaller;
+  font-weight: bold;
   text-align: center;
   margin: 0 auto;
+}
+
+.banner {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2%;
+}
+.banner h1 {
+  font-size: 64px;
+  font-weight: bold;
+  color: var(--p, #004E7A);
+}
+
+table {
+  font-size: 20px;
+}
+table img {
+  width: 60%;
 }
 
 @media (max-width: 900px) {
@@ -185,5 +208,15 @@ nav a {
   }
   .experiencia {
     width: 100%;
+  }
+  .banner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .banner img {
+    width: 80%;
+  }
+  .banner h1 {
+    font-size: 35px;
   }
 }/*# sourceMappingURL=style.css.map */
