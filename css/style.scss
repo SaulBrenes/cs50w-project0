@@ -41,6 +41,7 @@ nav a {
 
 .perfil {
   width: 30%;
+  height: fit-content;
   padding: 1.5% 4%;
   display: flex;
   flex-direction: column;
@@ -113,17 +114,12 @@ nav a {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-
-}
-
+  justify-content: center;
 .red {
+  margin: 5px 17px;
   display: flex;
   flex-direction: row;
-  gap: 5px;
-}
-
-.red {
+  gap: 8px;
   div {
     display: flex;
     flex-direction: column;
@@ -135,6 +131,49 @@ nav a {
     }
   }
 }
+}
+
+.experiencia{
+  width: 65%;
+  h1{
+    margin: 0 auto;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: $terciario;
+    background-color: $primario;
+  }
+
+  .lista {
+    margin-top: 10px;
+    li{
+      strong{
+        color:$primario;
+        text-align: center;
+      }
+
+      font-size: 25px;
+    }
+    
+    ol{
+      li{
+        font-size: 22px;
+      }
+    }
+
+    small{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: smaller;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+}
+
 
 @media (max-width: 900px) {
   .menu {
@@ -170,7 +209,11 @@ nav a {
   }
 
   .redes {
-    flex-direction: column;
-    gap: 20px;
+    flex-wrap: wrap ;
+  }
+
+  .experiencia{
+    width: 100%;
+    
   }
 }

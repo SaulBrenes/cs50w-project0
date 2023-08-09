@@ -35,6 +35,8 @@ nav a {
 
 .perfil {
   width: 30%;
+  height: -moz-fit-content;
+  height: fit-content;
   padding: 1.5% 4%;
   display: flex;
   flex-direction: column;
@@ -100,23 +102,58 @@ nav a {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
-
-.red {
+.redes .red {
+  margin: 5px 17px;
   display: flex;
   flex-direction: row;
-  gap: 5px;
+  gap: 8px;
 }
-
-.red div {
+.redes .red div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   color: #004E7A !important;
 }
-.red div a {
+.redes .red div a {
   text-decoration: none;
+}
+
+.experiencia {
+  width: 65%;
+}
+.experiencia h1 {
+  margin: 0 auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: #004E7A;
+}
+.experiencia .lista {
+  margin-top: 10px;
+}
+.experiencia .lista li {
+  font-size: 25px;
+}
+.experiencia .lista li strong {
+  color: #004E7A;
+  text-align: center;
+}
+.experiencia .lista ol li {
+  font-size: 22px;
+}
+.experiencia .lista small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: smaller;
+  text-align: center;
+  margin: 0 auto;
 }
 
 @media (max-width: 900px) {
@@ -144,7 +181,9 @@ nav a {
     text-align: justify;
   }
   .redes {
-    flex-direction: column;
-    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .experiencia {
+    width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */
