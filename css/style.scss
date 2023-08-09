@@ -39,8 +39,7 @@ nav a {
   justify-content: space-between;
 }
 
-.perfil {
-  width: 30%;
+%format-perfil{
   height: fit-content;
   padding: 1.5% 4%;
   display: flex;
@@ -49,7 +48,11 @@ nav a {
   justify-content: space-between;
   background: $primario;
   border-radius: 10px;
+}
 
+.perfil {
+  @extend %format-perfil;
+  width: 30%;
 }
 
 .perfil b,
@@ -199,6 +202,16 @@ table{
   }
 }
 
+.perfil-contacto{
+  @extend %format-perfil;
+  color: #FFF;
+  font-size: 18px;
+  margin: 5% 0;
+  img{
+    width: 150px;
+  }
+}
+
 
 @media (max-width: 900px) {
   .menu {
@@ -252,6 +265,24 @@ table{
 
     h1{
       font-size: 35px;
+    }
+  }
+
+  .perfil-contacto{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5%;
+    padding: 7%;
+    img{
+      display: none;
+    }
+  }
+
+  form{
+    label{
+      font-size: 18px;
     }
   }
 }

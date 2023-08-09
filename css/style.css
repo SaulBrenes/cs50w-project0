@@ -33,8 +33,7 @@ nav a {
   justify-content: space-between;
 }
 
-.perfil {
-  width: 30%;
+.perfil-contacto, .perfil {
   height: -moz-fit-content;
   height: fit-content;
   padding: 1.5% 4%;
@@ -44,6 +43,10 @@ nav a {
   justify-content: space-between;
   background: #004E7A;
   border-radius: 10px;
+}
+
+.perfil {
+  width: 30%;
 }
 
 .perfil b,
@@ -179,6 +182,15 @@ table img {
   width: 60%;
 }
 
+.perfil-contacto {
+  color: #FFF;
+  font-size: 18px;
+  margin: 5% 0;
+}
+.perfil-contacto img {
+  width: 150px;
+}
+
 @media (max-width: 900px) {
   .menu {
     justify-content: center;
@@ -218,5 +230,19 @@ table img {
   }
   .banner h1 {
     font-size: 35px;
+  }
+  .perfil-contacto {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5%;
+    padding: 7%;
+  }
+  .perfil-contacto img {
+    display: none;
+  }
+  form label {
+    font-size: 18px;
   }
 }/*# sourceMappingURL=style.css.map */
