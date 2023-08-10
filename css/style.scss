@@ -1,11 +1,11 @@
-/*Variables*/
+/* Uso de variables SASS*/
 $fondo: #D0DCE9;
 $primario: #004E7A;
 $secundario: #F0A800;
 $secundario_var: #f0a800c2;
 $terciario: #FFFFFF;
 
-/*Selector elemento*/
+/*Selector elemento (Total de selectores = 1)*/
 body {
   background: $fondo;
   margin-bottom: 2%;
@@ -14,7 +14,7 @@ body {
   font-size: 1.75em !important;
 }
 
-/*Selector clase (Total de selectores = 1)*/
+/*Selector clase (Total de selectores = 2)*/
 .menu {
   margin: 1% 5%;
   display: flex;
@@ -22,12 +22,13 @@ body {
   justify-content: right;
 }
 
+/*Selector id (Total de selectores = 3)*/
 #resaltado {
   padding-bottom: 0 !important;
   border-bottom: solid $secundario 8px !important;
 }
 
-/*Selector descendente(1)*/
+/*Selector descendente (Total de selectores = 4) */
 nav a {
   font-weight: bold !important;
   color: $primario !important;
@@ -39,12 +40,12 @@ nav a {
   justify-content: space-between;
 }
 
-%format-perfil{
+/*Uso de herencia SASS*/
+%format-perfil {
   height: fit-content;
-  padding: 1.5% 4%;
+  padding: 1.5% 2%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
   background: $primario;
   border-radius: 10px;
@@ -55,6 +56,7 @@ nav a {
   width: 30%;
 }
 
+/*Selector de Elementos Múltiples (Total de selectores = 5)*/
 .perfil b,
 .perfil p {
   display: flex;
@@ -70,6 +72,7 @@ nav a {
   margin-bottom: 20px;
 }
 
+/*Uso de anidamiento SASS*/
 .texto {
   width: 65%;
   padding-top: 5%;
@@ -101,6 +104,7 @@ nav a {
     padding: 1% 2%;
   }
 
+  /* Selector de Pseudo Clase (Total de selectores = 6)*/
   .button:hover {
     background: $secundario_var;
     padding: 1.3% 2.3%;
@@ -118,27 +122,30 @@ nav a {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-.red {
-  margin: 5px 17px;
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    color: $primario !important;
 
-    a {
-      text-decoration: none;
+  .red {
+    margin: 5px 17px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      color: $primario !important;
+
+      a {
+        text-decoration: none;
+      }
     }
   }
 }
-}
 
-.experiencia{
+.experiencia {
   width: 65%;
-  h1{
+
+  h1 {
     margin: 0 auto;
     width: fit-content;
     padding: 5px 10px;
@@ -151,22 +158,23 @@ nav a {
 
   .lista {
     margin-top: 10px;
-    li{
-      strong{
-        color:$primario;
+
+    li {
+      strong {
+        color: $primario;
         text-align: center;
       }
 
       font-size: 25px;
     }
-    
-    ol{
-      li{
+
+    ol {
+      li {
         font-size: 22px;
       }
     }
 
-    small{
+    small {
       margin-top: 20px !important;
       display: flex;
       align-items: center;
@@ -176,10 +184,16 @@ nav a {
       text-align: center;
       margin: 0 auto;
     }
+
+    /*Selector de Pseudo Elemento (Total de selectores = 7) */
+    small::before {
+      content: "\1F604";
+    }
+
   }
 }
 
-.banner{
+.banner {
   width: 100%;
   margin-top: 10px;
   display: flex;
@@ -187,33 +201,36 @@ nav a {
   justify-content: center;
   gap: 2%;
 
-  h1{
+  h1 {
     font-size: 64px;
     font-weight: bold;
     color: var(--p, #004E7A);
-    
+
   }
 }
 
-table{
+table {
   font-size: 20px;
-  img{
+
+  img {
     width: 60%;
   }
 }
 
-.perfil-contacto{
+.perfil-contacto {
   @extend %format-perfil;
   color: #FFF;
   font-size: 18px;
   margin: 5% 0;
-  img{
-    width: 150px;
+
+
+  img {
+    width: 100%;
   }
 }
 
-
-@media (max-width: 900px) {
+/*Uso de media Query*/
+@media (max-width: 780px) {
   .menu {
     justify-content: center;
   }
@@ -232,7 +249,7 @@ table{
   .texto {
     width: 100%;
 
-    .foto-responsive{
+    .foto-responsive {
       display: block;
     }
 
@@ -247,42 +264,63 @@ table{
   }
 
   .redes {
-    flex-wrap: wrap ;
+    flex-wrap: wrap;
   }
 
-  .experiencia{
+  .experiencia {
     width: 100%;
-    
+
   }
 
-  .banner{
+  .banner {
     flex-direction: column;
     text-align: center;
 
-    img{
+    img {
       width: 80%;
     }
 
-    h1{
+    h1 {
       font-size: 35px;
     }
   }
 
-  .perfil-contacto{
+  .perfil-contacto {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 5%;
-    padding: 7%;
-    img{
+    padding: 8%;
+
+    span {
+      width: 50%;
+    }
+
+    img {
       display: none;
     }
   }
 
-  form{
-    label{
-      font-size: 18px;
+  form {
+    label {
+      text-align: left;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .perfil-contacto {
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    padding: 4%;
+
+    span {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 2%;
+      width: 95%;
     }
   }
 }

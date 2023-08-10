@@ -1,5 +1,6 @@
-/*Variables*/
-/*Selector elemento*/
+@charset "UTF-8";
+/* Uso de variables SASS*/
+/*Selector elemento (Total de selectores = 1)*/
 body {
   background: #D0DCE9;
   margin-bottom: 2%;
@@ -8,7 +9,7 @@ body {
   font-size: 1.75em !important;
 }
 
-/*Selector clase (Total de selectores = 1)*/
+/*Selector clase (Total de selectores = 2)*/
 .menu {
   margin: 1% 5%;
   display: flex;
@@ -16,12 +17,13 @@ body {
   justify-content: right;
 }
 
+/*Selector id (Total de selectores = 3)*/
 #resaltado {
   padding-bottom: 0 !important;
   border-bottom: solid #F0A800 8px !important;
 }
 
-/*Selector descendente(1)*/
+/*Selector descendente (Total de selectores = 4) */
 nav a {
   font-weight: bold !important;
   color: #004E7A !important;
@@ -33,13 +35,13 @@ nav a {
   justify-content: space-between;
 }
 
+/*Uso de herencia SASS*/
 .perfil-contacto, .perfil {
   height: -moz-fit-content;
   height: fit-content;
-  padding: 1.5% 4%;
+  padding: 1.5% 2%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
   background: #004E7A;
   border-radius: 10px;
@@ -49,6 +51,7 @@ nav a {
   width: 30%;
 }
 
+/*Selector de Elementos Múltiples (Total de selectores = 5)*/
 .perfil b,
 .perfil p {
   display: flex;
@@ -64,6 +67,7 @@ nav a {
   margin-bottom: 20px;
 }
 
+/*Uso de anidamiento SASS*/
 .texto {
   width: 65%;
   padding-top: 5%;
@@ -73,6 +77,7 @@ nav a {
   gap: 30px;
   color: #004E7A;
   font-weight: bold;
+  /* Selector de Pseudo Clase (Total de selectores = 6)*/
 }
 .texto .foto-responsive {
   width: 50%;
@@ -139,6 +144,7 @@ nav a {
 }
 .experiencia .lista {
   margin-top: 10px;
+  /*Selector de Pseudo Elemento (Total de selectores = 7) */
 }
 .experiencia .lista li {
   font-size: 25px;
@@ -159,6 +165,9 @@ nav a {
   font-weight: bold;
   text-align: center;
   margin: 0 auto;
+}
+.experiencia .lista small::before {
+  content: "😄";
 }
 
 .banner {
@@ -188,10 +197,11 @@ table img {
   margin: 5% 0;
 }
 .perfil-contacto img {
-  width: 150px;
+  width: 100%;
 }
 
-@media (max-width: 900px) {
+/*Uso de media Query*/
+@media (max-width: 780px) {
   .menu {
     justify-content: center;
   }
@@ -234,15 +244,32 @@ table img {
   .perfil-contacto {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 5%;
-    padding: 7%;
+    padding: 8%;
+  }
+  .perfil-contacto span {
+    width: 50%;
   }
   .perfil-contacto img {
     display: none;
   }
   form label {
-    font-size: 18px;
+    text-align: left;
+  }
+}
+@media (max-width: 500px) {
+  .perfil-contacto {
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    padding: 4%;
+  }
+  .perfil-contacto span {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2%;
+    width: 95%;
   }
 }/*# sourceMappingURL=style.css.map */
